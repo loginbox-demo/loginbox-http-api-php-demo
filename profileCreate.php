@@ -32,6 +32,10 @@ $req = array(
         'proxyUsername' => '',//代理服务器账号
         'proxyPassword' => '',//代理服务器密码
         'proxyFlag' => true,//是否启用代理
+        'proxyFetchFlag' => false,//使用代理提取API
+        'proxyFetchRule'=>1,//提取规则,proxyFetchFlag=true情况下使用：1：每次打开浏览器都提取新IP，2：上次提取IP已过期，才提取新IP
+        'proxyVendor'=>1,//IP服务商,proxyFetchFlag=true情况下使用
+        'proxyScript'=>'',//IP提取API地址，proxyFetchFlag=true情况下使用
         'webrtcFlag' => '0',//0：webRTC真实模式，1：替换模式，-1：禁用模式
         'webrtcPublicIp' => '',//webRTC公网IP，多个IP以英文逗号隔开
         'webrtcLocalIp' => '',//webRTC内网IP，多个IP以英文逗号隔开
