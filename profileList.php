@@ -6,15 +6,12 @@ require __DIR__ . '/config.php';
 $req = array(
     'groupId' => '',//分组ID，可空
     'profileName' => '',//配置文件名称，可空
-    'pageSize' => 1000,//每页返回结果数量
+    'pageSize' => 10,//每页返回结果数量
     'pageNum' => 1//当前查询页数
 );
 
-$curl = new Curl(API_URL . 'getProfileList');
+$curl = new Curl(API_URL . 'profileList?'.http_build_query($req));
 
-$curl->setHeader(array('content-type:application/json'));
-$curl->setPostMethod();
-$curl->addPostData(json_encode($req));
 
 $curl->send();
 
