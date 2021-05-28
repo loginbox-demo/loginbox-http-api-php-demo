@@ -8,10 +8,16 @@ require __DIR__ . '/config.php';
 //可以通过本接口修改指定的环境参数
 $req = array(
     'model' => array(
-        'profileId' => '210406144528544013',//配置文件ID必传
+        'profileId' => '210528155354781781',//配置文件ID必传
         'userAgent' => 'new user agent',//如果指定了环境参数，则会进行修改，如果不传则继续使用之前的值
-        'proxyFlag'=>false
+        'proxyFlag' => false
     ),
+    'cacheOp' => array(
+        'cookie' => 0,//是否删除cookies及其他网站数据(1:是,0:否)
+        'form' => 1,//是否删除保存的表单填充数据(1:是,0:否)
+        'password' => 1,//是否删除保存的账号密码(1:是,0:否)
+        'history' => 1,//是否删除浏览记录(1:是,0:否)
+    )
 );
 
 $curl = new Curl(API_URL . 'profileReset');
